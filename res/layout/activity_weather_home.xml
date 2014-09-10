@@ -1,0 +1,281 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3000" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_day_cloudy" >
+
+        <RelativeLayout
+            android:id="@+id/contents"
+            android:layout_width="400px"
+            android:layout_height="560px"
+            android:layout_centerHorizontal="true" >
+
+            <com.notionplex.sizetest.DigitalClock
+                android:id="@+id/digitalClock1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="10px"
+                android:layout_marginTop="10px"
+                android:textColor="#fff"
+                android:textSize="10px" />
+
+            <RelativeLayout
+                android:id="@+id/temperatureLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true" >
+
+                <com.notionplex.sizetest.MyTextView
+                    android:id="@+id/temperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10px"
+                    android:text="27\u00B0"
+                    android:textColor="#fff"
+                    android:textSize="80px" />
+            </RelativeLayout>
+
+            <com.notionplex.sizetest.MyTextView
+                android:id="@+id/feelsLike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/temperatureLayout"
+                android:layout_below="@id/temperatureLayout"
+                android:layout_marginTop="-30px"
+                android:text="Feels Like 28"
+                android:textColor="#fff"
+                android:textSize="20px" />
+
+            <RelativeLayout
+                android:id="@+id/lowHighStateLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="200px"
+                android:layout_below="@id/feelsLike"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5px" >
+
+                <ImageView
+                    android:id="@+id/weatherIcon"
+                    android:layout_width="140px"
+                    android:layout_height="140px"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/mostlycloudy" />
+
+                <ImageView
+                    android:id="@+id/upImage"
+                    android:layout_width="40px"
+                    android:layout_height="40px"
+                    android:layout_marginTop="30px"
+                    android:layout_toRightOf="@id/weatherIcon"
+                    android:src="@drawable/up" />
+
+                <com.notionplex.sizetest.MyTextView
+                    android:id="@+id/highTemperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/upImage"
+                    android:layout_toRightOf="@id/upImage"
+                    android:text="30"
+                    android:textColor="#fff"
+                    android:textSize="20px" />
+
+                <ImageView
+                    android:id="@+id/downImage"
+                    android:layout_width="40px"
+                    android:layout_height="40px"
+                    android:layout_alignBottom="@id/upImage"
+                    android:layout_marginLeft="20px"
+                    android:layout_toRightOf="@id/highTemperature"
+                    android:src="@drawable/down" />
+
+                <com.notionplex.sizetest.MyTextView
+                    android:id="@+id/lowTemperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/upImage"
+                    android:layout_toRightOf="@id/downImage"
+                    android:text="25"
+                    android:textColor="#fff"
+                    android:textSize="20px" />
+
+                <com.notionplex.sizetest.MyTextView
+                    android:id="@+id/weatherState"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/upImage"
+                    android:layout_alignLeft="@id/upImage"
+                    android:text="Partly Sunny"
+                    android:textColor="#fff"
+                    android:textSize="19px" />
+            </RelativeLayout>
+
+            <FrameLayout
+                android:id="@+id/bottomFrame"
+                android:layout_width="match_parent"
+                android:layout_height="150px"
+                android:layout_alignParentBottom="true"
+                android:background="#3000" >
+
+                <RelativeLayout
+                    android:id="@+id/windRainData"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical" >
+
+                    <RelativeLayout
+                        android:id="@+id/windLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="20px">
+
+                        <ImageView
+                            android:id="@+id/windIcon"
+                            android:layout_width="45px"
+                            android:layout_height="45px"
+                            android:layout_marginRight="10px"
+                            android:src="@drawable/wind" />
+
+                        <TextView
+                            android:id="@+id/windText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/windIcon"
+                            android:text="Wind"
+                            android:textColor="#fff"
+                            android:textSize="12px" />
+
+                        <TextView
+                            android:id="@+id/windInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/windText"
+                            android:layout_marginTop="-5px"
+                            android:layout_toRightOf="@id/windIcon"
+                            android:text="11 km/h SW"
+                            android:textColor="#fff"
+                            android:textSize="10px" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/precipitationLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@id/windLayout"
+                        android:layout_below="@id/windLayout"
+                        android:layout_marginTop="20px" >
+
+                        <ImageView
+                            android:id="@+id/precipitationIcon"
+                            android:layout_width="45px"
+                            android:layout_height="45px"
+                            android:layout_marginRight="5px"
+                            android:src="@drawable/precipitation" />
+
+                        <TextView
+                            android:id="@+id/precipitationText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/precipitationIcon"
+                            android:text="Precipitation"
+                            android:textColor="#fff"
+                            android:textSize="12px" />
+
+                        <TextView
+                            android:id="@+id/precipitationInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/precipitationText"
+                            android:layout_marginTop="-5px"
+                            android:layout_toRightOf="@id/precipitationIcon"
+                            android:text="10%"
+                            android:textColor="#fff"
+                            android:textSize="10px" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/humidityLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20px" >
+
+                        <ImageView
+                            android:id="@+id/humidityIcon"
+                            android:layout_width="45px"
+                            android:layout_height="45px"
+                            android:layout_marginRight="5px"
+                            android:src="@drawable/humidity" />
+
+                        <TextView
+                            android:id="@+id/humidityText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/humidityIcon"
+                            android:text="Humidity"
+                            android:textColor="#fff"
+                            android:textSize="12px" />
+
+                        <TextView
+                            android:id="@+id/humidityInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/humidityText"
+                            android:layout_marginTop="-5px"
+                            android:layout_toRightOf="@id/humidityIcon"
+                            android:text="21%"
+                            android:textColor="#fff"
+                            android:textSize="10px" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/visibilityLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@id/humidityLayout"
+                        android:layout_alignTop="@id/precipitationLayout"
+                        android:layout_below="@id/humidityLayout" >
+
+                        <ImageView
+                            android:id="@+id/visibilityIcon"
+                            android:layout_width="45px"
+                            android:layout_height="45px"
+                            android:layout_marginRight="5px"
+                            android:src="@drawable/visibility" />
+
+                        <TextView
+                            android:id="@+id/visibilityText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_toRightOf="@id/visibilityIcon"
+                            android:text="Visibility"
+                            android:textColor="#fff"
+                            android:textSize="12px" />
+
+                        <TextView
+                            android:id="@+id/visibilityInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/visibilityText"
+                            android:layout_marginTop="-3px"
+                            android:layout_toRightOf="@id/visibilityIcon"
+                            android:text="5.0 km"
+                            android:textColor="#fff"
+                            android:textSize="10px" />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </FrameLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</FrameLayout>
